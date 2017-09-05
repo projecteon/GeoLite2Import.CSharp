@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using GeoLite2Import.Business;
 using GeoLite2Import.Business.Models;
 
 namespace GeoLite2Import
