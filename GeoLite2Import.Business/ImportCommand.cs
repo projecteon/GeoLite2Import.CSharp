@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using GeoLite2Import.Models;
 
 namespace GeoLite2Import.Business
 {
