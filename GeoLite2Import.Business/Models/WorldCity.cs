@@ -1,4 +1,4 @@
-namespace GeoLite2Import.Models
+namespace GeoLite2Import.Business.Models
 {
     public class WorldCity
     {

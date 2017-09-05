@@ -1,4 +1,4 @@
-namespace GeoLite2Import
+namespace GeoLite2Import.Business
 {
     public interface ICommand<T>
     {

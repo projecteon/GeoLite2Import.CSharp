@@ -1,6 +1,6 @@
 using System;
 
-namespace GeoLite2Import.Models
+namespace GeoLite2Import.Business.Models
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class CsvColumnAttribute : Attribute

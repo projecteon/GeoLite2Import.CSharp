@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeoLite2Import\GeoLite2Import.csproj" />
+    <ProjectReference Include="..\GeoLite2Import.Business\GeoLite2Import.Business.csproj" />
   </ItemGroup>
 
 </Project>

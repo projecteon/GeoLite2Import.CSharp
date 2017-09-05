@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GeoLite2Import.Business\GeoLite2Import.Business.csproj" />
+  </ItemGroup>
+
 </Project>

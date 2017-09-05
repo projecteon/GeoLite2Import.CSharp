@@ -1,6 +1,6 @@
-namespace GeoLite2Import.Models
+namespace GeoLite2Import.Business.Models
 {
-    public class GeoLite2City
+    public class GeoLite2Country
     {
         [CsvColumn(0)]
         public string network { get; set; }
@@ -13,14 +13,6 @@ namespace GeoLite2Import.Models
         [CsvColumn(4)]
         public string is_anonymous_proxy { get; set; }
         [CsvColumn(5)]
-        public string is_satellite_provider { get; set; }
-        [CsvColumn(6)]
-        public string postal_code { get; set; }
-        [CsvColumn(7)]
-        public string latitude { get; set; }
-        [CsvColumn(8)]
-        public string longitude { get; set; }
-        [CsvColumn(9)]
-        public string accuracy_radius { get; set; }
+        public string is_satellite_provider { get; set; }    
     }
 }

@@ -1,4 +1,4 @@
-namespace GeoLite2Import
+namespace GeoLite2Import.Business
 {
     public class ValidateNameSpaceCommand<T> : ICommand<bool> where T : new()
     {
