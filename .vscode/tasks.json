@@ -18,6 +18,22 @@
           "isTestCommand": true,
           "showOutput": "always",
           "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "Tests",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "test"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }
