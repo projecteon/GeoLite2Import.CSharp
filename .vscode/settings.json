@@ -2,6 +2,7 @@
 {
     // The following will hide the js and map files in the editor
     "files.exclude": {
+        ".vs/": true,
         "**/obj/": true,
         "**/bin/": true
     }
