@@ -5,6 +5,7 @@ using System.Linq;
 using GeoLite2Import.Business;
 using GeoLite2Import.Business.Models;
 using System.Net;
+using System.Numerics;
 
 namespace GeoLite2Import
 {
@@ -36,13 +37,20 @@ namespace GeoLite2Import
             }
         }
 
+        static BigInteger translate(IPAddress ipAddress)
+        {
+            var ipParts = ipAddress.ToString().Split('.');
+            var numberedIp = ipParts.Aggregate((current, next) => current + next.PadLeft(3, '0'));
+            return BigInteger.Parse(numberedIp);
+        }
+
         static void LogIpRanges()
         {
             var blocks = Import<GeoLite2CityBlock>(Ipv4BCityBlocksImportFilePath);
             foreach (var block in blocks)
             {
                 var ipnetwork = IPNetwork.Parse(block.network);
-                Console.WriteLine($"{block.network}, {ipnetwork.FirstUsable}, {ipnetwork.LastUsable}");
+                Console.WriteLine($"{block.network}, {ipnetwork.FirstUsable} - {ipnetwork.LastUsable}, {translate(ipnetwork.FirstUsable)} - {translate(ipnetwork.LastUsable)}");
             }
             Console.ReadLine();
         }
@@ -51,7 +59,7 @@ namespace GeoLite2Import
         {
             var cities = Import<GeoLite2CityLocation>(Ipv4CityLocationsImportFilePath);
             var maxLengthCityName = cities.Aggregate((agg, next) => next.city_name.Length > agg.city_name.Length ? next : agg);
-            Console.WriteLine($"{maxLengthCityName.geoname_id}, {maxLengthCityName.city_name}, {maxLengthCityName.city_name.Length}");
+            Console.WriteLine($"{maxLengthCityName.geoname_id}, {maxLengthCityName.city_name} {maxLengthCityName.city_name.Length}");
             Console.ReadLine();
         }
 
