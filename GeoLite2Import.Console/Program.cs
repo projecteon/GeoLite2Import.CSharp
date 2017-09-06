@@ -9,15 +9,20 @@ namespace GeoLite2Import
 {
     class Program
     {
-        static string Ipv4CititesImportFilePath = @"geolite2\GeoLite2-City-Blocks-IPv4-example.csv";
-        static string Ipv4CountriesImportFilePath = @"geolite2\GeoLite2-Country-Blocks-IPv4-example.csv";
+        static string Ipv4BCityBlocksImportFilePath = @"geolite2\GeoLite2-City-Blocks-IPv4-example.csv";
+        static string Ipv4CityLocationsImportFilePath = @"geolite2\GeoLite2-City-Locations-en.csv";
+        static string Ipv4CountryBlocksImportFilePath = @"geolite2\GeoLite2-Country-Blocks-IPv4-example.csv";
+        static string Ipv4CountyLocationsImportFilePath = @"geolite2\GeoLite2-Country-Locations-en-example.csv";
         static string WorldCitiesPopImportFilePath = @"geolite2\worldcitiespop-example.csv";
 
         static void Main(string[] args)
         {
-            LogImport<GeoLite2City>(Ipv4CititesImportFilePath);
-            LogImport<GeoLite2Country>(Ipv4CountriesImportFilePath);
+            LogImport<GeoLite2CityBlock>(Ipv4BCityBlocksImportFilePath);
+            LogImport<GeoLite2CityLocation>(Ipv4CityLocationsImportFilePath);
+            LogImport<GeoLite2CountryBlock>(Ipv4CountryBlocksImportFilePath);
+            LogImport<GeoLite2CountryLocation>(Ipv4CountyLocationsImportFilePath);
             LogImport<WorldCity>(WorldCitiesPopImportFilePath);
+            //LogMaxCityNameLength()
         }
 
         static void LogImport<T>(string filePath) where T: new()
@@ -27,6 +32,14 @@ namespace GeoLite2Import
             {
                 Console.WriteLine(item);
             }
+        }
+
+        static void LogMaxCityNameLength()
+        {
+            var cities = Import<GeoLite2CityLocation>(Ipv4CityLocationsImportFilePath);
+            var maxLengthCityName = cities.Aggregate((agg, next) => next.city_name.Length > agg.city_name.Length ? next : agg);
+            Console.WriteLine($"{maxLengthCityName.geoname_id}, {maxLengthCityName.city_name}, {maxLengthCityName.city_name.Length}");
+            Console.ReadLine();
         }
 
         static IEnumerable<T> Import<T>(string filePath) where T: new()

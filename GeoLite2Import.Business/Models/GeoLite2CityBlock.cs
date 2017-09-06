@@ -1,6 +1,6 @@
 namespace GeoLite2Import.Business.Models
 {
-    public class GeoLite2City
+    public class GeoLite2CityBlock
     {
         [CsvColumn(0)]
         public string network { get; set; }

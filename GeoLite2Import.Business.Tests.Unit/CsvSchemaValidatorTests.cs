@@ -1,4 +1,5 @@
-using GeoLite2Import.Models;
+using GeoLite2Import.Business;
+using GeoLite2Import.Business.Models;
 using Xunit;
 
 namespace GeoLite2Import.Tests.Unit

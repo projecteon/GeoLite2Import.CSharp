@@ -1,0 +1,12 @@
+geoname_id,locale_code,continent_code,continent_name,country_iso_code,country_name,subdivision_1_iso_code,subdivision_1_name,subdivision_2_iso_code,subdivision_2_name,city_name,metro_code,time_zone
+32909,en,AS,Asia,IR,Iran,07,"Ostan-e Tehran",,,"Shahre Jadide Andisheh",,Asia/Tehran
+49518,en,AF,Africa,RW,Rwanda,,,,,,,Africa/Kigali
+51537,en,AF,Africa,SO,Somalia,,,,,,,Africa/Mogadishu
+53654,en,AF,Africa,SO,Somalia,BN,Banaadir,,,Mogadishu,,Africa/Mogadishu
+57289,en,AF,Africa,SO,Somalia,WO,"Woqooyi Galbeed",,,Hargeisa,,Africa/Mogadishu
+69543,en,AS,Asia,YE,Yemen,,,,,,,Asia/Aden
+70223,en,AS,Asia,YE,Yemen,DH,"Dhamār",,,Ta`izz,,Asia/Aden
+71136,en,AS,Asia,YE,Yemen,HD,"Muhafazat Hadramawt",,,Sana',,Asia/Aden
+71137,en,AS,Asia,YE,Yemen,SN,Sanaa,,,Sanaa,,Asia/Aden
+74477,en,AS,Asia,YE,Yemen,IB,Ibb,,,Ibb,,Asia/Aden
+77843,en,AS,Asia,YE,Yemen,HU,"Al Hudaydah",,,"As Salif",,Asia/Aden
