@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using GeoLite2Import.Business;
 using GeoLite2Import.Business.Models;
+using System.Net;
 
 namespace GeoLite2Import
 {
@@ -17,12 +18,13 @@ namespace GeoLite2Import
 
         static void Main(string[] args)
         {
-            LogImport<GeoLite2CityBlock>(Ipv4BCityBlocksImportFilePath);
-            LogImport<GeoLite2CityLocation>(Ipv4CityLocationsImportFilePath);
-            LogImport<GeoLite2CountryBlock>(Ipv4CountryBlocksImportFilePath);
-            LogImport<GeoLite2CountryLocation>(Ipv4CountyLocationsImportFilePath);
-            LogImport<WorldCity>(WorldCitiesPopImportFilePath);
+            //LogImport<GeoLite2CityBlock>(Ipv4BCityBlocksImportFilePath);
+            //LogImport<GeoLite2CityLocation>(Ipv4CityLocationsImportFilePath);
+            //LogImport<GeoLite2CountryBlock>(Ipv4CountryBlocksImportFilePath);
+            //LogImport<GeoLite2CountryLocation>(Ipv4CountyLocationsImportFilePath);
+            //LogImport<WorldCity>(WorldCitiesPopImportFilePath);
             //LogMaxCityNameLength()
+            LogIpRanges();
         }
 
         static void LogImport<T>(string filePath) where T: new()
@@ -32,6 +34,17 @@ namespace GeoLite2Import
             {
                 Console.WriteLine(item);
             }
+        }
+
+        static void LogIpRanges()
+        {
+            var blocks = Import<GeoLite2CityBlock>(Ipv4BCityBlocksImportFilePath);
+            foreach (var block in blocks)
+            {
+                var ipnetwork = IPNetwork.Parse(block.network);
+                Console.WriteLine($"{block.network}, {ipnetwork.FirstUsable}, {ipnetwork.LastUsable}");
+            }
+            Console.ReadLine();
         }
 
         static void LogMaxCityNameLength()
