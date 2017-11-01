@@ -12,7 +12,7 @@ namespace GeoLite2Import
     class Program
     {
         static string Ipv4BCityBlocksImportFilePath = @"geolite2\GeoLite2-City-Blocks-IPv4-example.csv";
-        static string Ipv4CityLocationsImportFilePath = @"geolite2\GeoLite2-City-Locations-en.csv";
+        static string Ipv4CityLocationsImportFilePath = @"geolite2\GeoLite2-City-Locations-en-example.csv";
         static string Ipv4CountryBlocksImportFilePath = @"geolite2\GeoLite2-Country-Blocks-IPv4-example.csv";
         static string Ipv4CountyLocationsImportFilePath = @"geolite2\GeoLite2-Country-Locations-en-example.csv";
         static string WorldCitiesPopImportFilePath = @"geolite2\worldcitiespop-example.csv";
@@ -24,7 +24,7 @@ namespace GeoLite2Import
             //LogImport<GeoLite2CountryBlock>(Ipv4CountryBlocksImportFilePath);
             //LogImport<GeoLite2CountryLocation>(Ipv4CountyLocationsImportFilePath);
             //LogImport<WorldCity>(WorldCitiesPopImportFilePath);
-            //LogMaxCityNameLength()
+            //LogMaxCityNameLength();
             LogIpRanges();
         }
 
